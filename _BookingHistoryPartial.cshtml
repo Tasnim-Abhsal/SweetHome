@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HotelManagementSystem.ViewModel.BookingViewModel>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<div class="container mt-5">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Booking Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+
+                            <th>Customer Name</th>
+                            <th>Customer Address</th>
+                            <th>Booking From</th>
+                            <th>Booking To</th>
+                            <th>Assign Room Id</th>
+                            <th>No Of Members</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center h4">@item.CustomerName</td>
+                                <td class="text-center h4">@item.CustomerAddress</td>
+                                <td class="text-center h4"> @item.BookingFrom</td>
+                                <td class="text-center h4">@item.BookingTo</td>
+                                <td class="text-center h4">@item.AssignRoomId</td>
+                                <td class="h4">@item.NumberOfMembers</td>
+                                <td class="h4">@item.TotalAmount.ToString("#,##0.00")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
